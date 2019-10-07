@@ -1,0 +1,10 @@
+{
+    "name": "Chicken Marsala",
+    "slots": 1.5,
+    "ingredients": [
+        { "name": "chicken" },
+        { "name": "onion" },
+        { "name": "mushrooms" },
+        { "name": "parsley" }
+    ]
+}

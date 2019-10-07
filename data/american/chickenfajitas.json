@@ -1,0 +1,11 @@
+{
+    "name": "Chicken Fajitas",
+    "slots": 1,
+    "ingredients": [
+        { "name": "chicken" },
+        { "name": "onion" },
+        { "name": "red pepper" },
+        { "name": "green pepper" },
+        { "name": "flour tortillas" }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Wiggly Bois",
+    "slots": 1.5,
+    "ingredients": [
+        { "name": "semolina flour" },
+        { "name": "all purpose flour"},
+        { "name": "red sauce" },
+        { "name": "italian sausage" }
+    ]
+}

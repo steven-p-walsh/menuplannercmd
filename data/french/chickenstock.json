@@ -1,0 +1,13 @@
+{
+    "name": "Chicken Stock",
+    "slots": 3,
+    "freezable": true,
+    "ingredients": [
+        { "name": "chicken bones" },
+        { "name": "dry white wine" },
+        { "name": "carrots" },
+        { "name": "onion" },
+        { "name": "celery" },
+        { "name": "thyme" }
+    ]
+}

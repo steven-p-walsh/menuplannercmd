@@ -1,0 +1,10 @@
+{
+    "name": "red sauce",
+    "slots": 2,
+    "ingredients": [
+        { "name": "san marzano tomatoes can"},
+        { "name": "anchovies" },
+        { "name": "garlic" },
+        { "name": "basil" }
+    ]
+}

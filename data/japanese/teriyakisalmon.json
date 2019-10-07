@@ -1,0 +1,8 @@
+{
+    "name": "Teriyaki Salmon",
+    "slots": 0.5,
+    "ingredients": [
+        { "name": "salmon" },
+        { "name": "teriyaki sauce" }
+    ]
+}

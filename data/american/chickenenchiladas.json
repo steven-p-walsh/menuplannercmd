@@ -1,0 +1,14 @@
+{
+    "name": "Chicken Enchiladas",
+    "slots": 1,
+    "ingredients": [
+        { "name": "chicken" },
+        { "name": "taco cheese" },
+        { "name": "onion" },
+        { "name": "diced green chiles can" },
+        { "name": "black beans can" },
+        { "name": "chicken stock" },
+        { "name": "cilantro" },
+        { "name": "flour tortillas" }
+    ]
+}

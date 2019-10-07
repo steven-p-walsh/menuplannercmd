@@ -1,0 +1,13 @@
+{
+    "name": "Coq Au Vin",
+    "slots": 2,
+    "ingredients": [
+        { "name": "chicken" },
+        { "name": "mushrooms" },
+        { "name": "dry white wine" },
+        { "name": "chicken stock" },
+        { "name": "thyme" },
+        { "name": "bacon" },
+        { "name": "pearl onion" }
+    ]
+}

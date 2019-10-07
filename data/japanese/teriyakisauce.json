@@ -1,0 +1,10 @@
+{
+    "name": "Teriyaki Sauce",
+    "slots": 0.5,
+    "ingredients": [
+        { "name": "soy sauce" },
+        { "name": "mirin" },
+        { "name": "Sōke" },
+        { "name": "sugar" }
+    ]
+}

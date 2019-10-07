@@ -1,0 +1,11 @@
+{
+    "name": "Chicken Tikka Masala",
+    "slots": 1.5,
+    "ingredients": [
+        { "name": "chicken" },
+        { "name": "purple onion" },
+        { "name": "tomatoe puree" },
+        { "name": "plain yogurt" },
+        { "name": "heavy cream" }
+    ]
+}
