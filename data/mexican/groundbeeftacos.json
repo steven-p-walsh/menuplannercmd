@@ -1,6 +1,7 @@
 {
     "name": "Ground Beef Tacos",
     "slots": 1,
+    "favorability": 100,
     "type": "entree",
     "season": null,
     "ingredients": [

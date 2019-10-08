@@ -1,6 +1,7 @@
 {
     "name": "Paella",
     "slots": 2,
+    "favorability": 50,
     "type": "entree",
     "season": ["summer"],
     "ingredients": [

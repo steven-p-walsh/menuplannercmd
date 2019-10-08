@@ -4,7 +4,6 @@
     { "name": "fish stock", "category": "spanish", "recipe": "fishstock.json" },
     { "name": "teriyaki sauce", "category": "japanese", "recipe": "teriyakisauce.json" },
     { "name": "salsa", "category": "mexican", "recipe": "salsa.json" },
-    
     { "name": "Sōke", "points": 0.32 },
     { "name": "all purpose flour", "points": 0.05 },
     { "name": "anchovies", "points": 1 },

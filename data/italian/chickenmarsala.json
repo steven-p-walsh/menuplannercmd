@@ -1,6 +1,7 @@
 {
     "name": "Chicken Marsala",
     "slots": 1.5,
+    "favorability": 75,
     "type": "entree",
     "season": ["fall", "winter"],
     "ingredients": [

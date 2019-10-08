@@ -15,7 +15,8 @@ def recipe_json(file, category_name):
                 recipe_json['name'],
                 recipe_json['ingredients'],
                 recipe_json['slots'],
-                recipe_json['type']
+                recipe_json['type'],
+                recipe_json['favorability'] if 'favorability' in recipe_json else None
             )
             recipe_db.add_recipe(recipe)
 
@@ -59,7 +60,7 @@ if __name__ == "__main__":
     # run the generator
     generator = MenuGenerator(recipe_db, pantry, 5, 1000)
     best_menu = generator.run()
-    names = map(lambda x: '%s %s' % (x.category_name, x.name), best_menu['items'])
+    names = map(lambda x: '%s - %s' % (x.category_name, x.name), best_menu['items'])
     for name in names:
         print(name)
 

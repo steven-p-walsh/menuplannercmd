@@ -1,6 +1,7 @@
 {
     "name": "Chicken Fajitas",
     "slots": 1,
+    "favorability": 60,
     "type": "entree",
     "season": null,
     "ingredients": [

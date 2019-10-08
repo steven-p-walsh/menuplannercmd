@@ -2,6 +2,7 @@
     "name": "Coq Au Vin",
     "slots": 2,
     "type": "entree",
+    "favorability": 45,
     "season": ["fall", "winter"],
     "ingredients": [
         { "name": "chicken" },

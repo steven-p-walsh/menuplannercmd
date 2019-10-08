@@ -1,6 +1,7 @@
 {
     "name": "Wiggly Bois",
     "slots": 1.5,
+    "favorability": 78,
     "type": "entree",
     "season": null,
     "ingredients": [

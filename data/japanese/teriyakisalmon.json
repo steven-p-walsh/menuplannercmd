@@ -1,6 +1,7 @@
 {
     "name": "Teriyaki Salmon",
     "slots": 0.5,
+    "favorability": 70,
     "type": "entree",
     "season": null,
     "ingredients": [

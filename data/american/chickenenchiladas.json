@@ -1,6 +1,7 @@
 {
     "name": "Chicken Enchiladas",
     "slots": 1,
+    "favorability": 80,
     "type": "entree",
     "ingredients": [
         { "name": "chicken" },
