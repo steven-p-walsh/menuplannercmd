@@ -51,6 +51,7 @@ if __name__ == "__main__":
     # run the generator
     generator = MenuGenerator(recipe_db, pantry, 5, 1000)
     best_menu = generator.run()
-    names = list(map(lambda x: '%s %s' % (x.category_name, x.name), best_menu['items']))
-    print(names)
+    names = map(lambda x: '%s %s' % (x.category_name, x.name), best_menu['items'])
+    for name in names:
+        print(name)
 
