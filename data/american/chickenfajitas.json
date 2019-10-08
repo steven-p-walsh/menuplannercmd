@@ -4,10 +4,11 @@
     "favorability": 60,
     "type": "entree",
     "season": null,
+    "frequency": "monthly",
     "ingredients": [
         { "name": "chicken" },
         { "name": "onion" },
-        { "name": "red  bell pepper" },
+        { "name": "red bell pepper" },
         { "name": "green bell pepper" },
         { "name": "flour tortillas" }
     ]

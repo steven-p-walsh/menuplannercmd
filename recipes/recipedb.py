@@ -6,6 +6,7 @@ class RecipeDb(object):
     def __init__(self):
         self.recipes = {}
         self.entrees = {} # we do not want to suggest sauces and stocks
+        self.mappings = {}
 
     def add_recipe(self, recipe):
         key = '%s.%s' % (recipe.category_name, recipe.name)
@@ -15,6 +16,10 @@ class RecipeDb(object):
                 self.entrees[key] = recipe
         else:
             raise Exception('Error adding recipe, duplicate recipe %s' % key)
+
+    def add_mapping(self, mapping):
+        key = mapping['name']
+        self.mappings[key] = mapping
 
     def get_ingredients_list(self):
         all_ingredients = []

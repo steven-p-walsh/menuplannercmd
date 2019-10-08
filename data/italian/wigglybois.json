@@ -4,6 +4,7 @@
     "favorability": 78,
     "type": "entree",
     "season": null,
+    "frequency": "semi-monthly",
     "ingredients": [
         { "name": "semolina flour" },
         { "name": "all purpose flour"},

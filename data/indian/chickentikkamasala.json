@@ -4,6 +4,7 @@
     "type": "entree",
     "favorability": 75,
     "season": null,
+    "frequency": "semi-monthly",
     "ingredients": [
         { "name": "chicken" },
         { "name": "purple onion" },

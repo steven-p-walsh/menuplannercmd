@@ -2,6 +2,8 @@
     "name": "Chicken Enchiladas",
     "slots": 1,
     "favorability": 80,
+    "frequency": "semi-monthly", 
+    "season": null,
     "type": "entree",
     "ingredients": [
         { "name": "chicken" },

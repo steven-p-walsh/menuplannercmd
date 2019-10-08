@@ -4,6 +4,7 @@
     "type": "entree",
     "favorability": 45,
     "season": ["fall", "winter"],
+    "frequency": "monthly",
     "ingredients": [
         { "name": "chicken" },
         { "name": "mushrooms" },

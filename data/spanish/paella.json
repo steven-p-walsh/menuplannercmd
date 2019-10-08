@@ -4,6 +4,7 @@
     "favorability": 50,
     "type": "entree",
     "season": ["summer"],
+    "frequency": "seasonally",
     "ingredients": [
         { "name": "chicken stock" },
         { "name": "fish stock" },

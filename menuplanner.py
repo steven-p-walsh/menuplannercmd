@@ -16,7 +16,8 @@ def recipe_json(file, category_name):
                 recipe_json['ingredients'],
                 recipe_json['slots'],
                 recipe_json['type'],
-                recipe_json['favorability'] if 'favorability' in recipe_json else None
+                recipe_json['favorability'] if 'favorability' in recipe_json else None,
+                recipe_json['frequency'] if 'frequency' in recipe_json else None
             )
             recipe_db.add_recipe(recipe)
 
@@ -24,6 +25,13 @@ def pantry_json(data_folder):
     path = '%s/pantry.json' % data_folder
     with open(path, 'r') as f:
         return json.load(f)
+
+def import_ingredient_mappings(data_folder):
+    path = '%s/ingredientmappings.json' % data_folder
+    with open(path, 'r') as f:
+        mappings = json.load(f)
+        for mapping in mappings:
+            recipe_db.add_mapping(mapping)
 
 def import_category_recipe_json(data_folder, category_name):
     path = '%s/%s' % (data_folder, category_name)
@@ -49,9 +57,11 @@ if __name__ == "__main__":
     recipe_count = 5
     iteration_count = 1000
     pantry = pantry_json(data_folder)
+    
     # this will load the recipe db
     import_category_manifest_json(data_folder)
-    
+    import_ingredient_mappings(data_folder)
+
     # combined list of all ingredients
     #names = recipe_db.get_ingredients_list()
     #names = list(set(names))

@@ -4,6 +4,7 @@
     "favorability": 100,
     "type": "entree",
     "season": null,
+    "frequency": "weekly",
     "ingredients": [
         { "name": "ground beef" },
         { "name": "onion" },

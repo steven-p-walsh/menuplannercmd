@@ -4,6 +4,7 @@
     "favorability": 70,
     "type": "entree",
     "season": null,
+    "frequency": "monthly",
     "ingredients": [
         { "name": "salmon" },
         { "name": "teriyaki sauce" }

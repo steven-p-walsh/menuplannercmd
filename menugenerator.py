@@ -25,7 +25,7 @@ class MenuGenerator(object):
         context = { 
             'recipe_db': self.recipe_db, 
             'items': first_items if best_iteration is None else best_iteration['items'].copy(), 
-            'pantry': self.pantry, 
+            'pantry': list(map(lambda x: x['name'], self.pantry)), 
             'score': -1 
         }
         return context
