@@ -1,6 +1,7 @@
 {
     "name": "Teriyaki Sauce",
     "slots": 0.5,
+    "type": "supplemental",
     "ingredients": [
         { "name": "soy sauce" },
         { "name": "mirin" },

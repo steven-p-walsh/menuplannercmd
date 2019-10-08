@@ -1,6 +1,7 @@
 {
     "name": "Chicken Fajitas",
     "slots": 1,
+    "type": "entree",
     "ingredients": [
         { "name": "chicken" },
         { "name": "onion" },

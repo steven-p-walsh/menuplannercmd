@@ -1,6 +1,7 @@
 {
     "name": "red sauce",
     "slots": 2,
+    "type": "supplemental",
     "ingredients": [
         { "name": "san marzano tomatoes can"},
         { "name": "anchovies" },

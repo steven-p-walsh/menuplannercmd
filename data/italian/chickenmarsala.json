@@ -1,6 +1,7 @@
 {
     "name": "Chicken Marsala",
     "slots": 1.5,
+    "type": "entree",
     "ingredients": [
         { "name": "chicken" },
         { "name": "onion" },

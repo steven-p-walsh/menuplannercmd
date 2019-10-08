@@ -1,6 +1,7 @@
 {
     "name": "Wiggly Bois",
     "slots": 1.5,
+    "type": "entree",
     "ingredients": [
         { "name": "semolina flour" },
         { "name": "all purpose flour"},

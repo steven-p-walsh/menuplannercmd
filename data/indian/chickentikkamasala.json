@@ -1,6 +1,7 @@
 {
     "name": "Chicken Tikka Masala",
     "slots": 1.5,
+    "type": "entree",
     "ingredients": [
         { "name": "chicken" },
         { "name": "purple onion" },

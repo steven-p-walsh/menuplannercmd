@@ -1,0 +1,4 @@
+1. Allow mutation of ingredients
+2. Recurse recipe-ingredients for score
+3. Reduce score for history
+4. favability score

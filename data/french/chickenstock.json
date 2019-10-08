@@ -1,6 +1,7 @@
 {
     "name": "Chicken Stock",
     "slots": 3,
+    "type": "supplemental",
     "freezable": true,
     "ingredients": [
         { "name": "chicken bones" },
