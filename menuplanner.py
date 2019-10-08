@@ -50,6 +50,12 @@ if __name__ == "__main__":
     pantry = pantry_json(data_folder)
     # this will load the recipe db
     import_category_manifest_json(data_folder)
+    
+    # combined list of all ingredients
+    #names = recipe_db.get_ingredients_list()
+    #names = list(set(names))
+    #names.sort()
+    
     # run the generator
     generator = MenuGenerator(recipe_db, pantry, 5, 1000)
     best_menu = generator.run()

@@ -2,11 +2,12 @@
     "name": "Chicken Fajitas",
     "slots": 1,
     "type": "entree",
+    "season": null,
     "ingredients": [
         { "name": "chicken" },
         { "name": "onion" },
-        { "name": "red pepper" },
-        { "name": "green pepper" },
+        { "name": "red  bell pepper" },
+        { "name": "green bell pepper" },
         { "name": "flour tortillas" }
     ]
 }

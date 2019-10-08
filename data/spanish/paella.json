@@ -2,6 +2,7 @@
     "name": "Paella",
     "slots": 2,
     "type": "entree",
+    "season": ["summer"],
     "ingredients": [
         { "name": "chicken stock" },
         { "name": "fish stock" },

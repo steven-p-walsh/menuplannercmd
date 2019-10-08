@@ -2,6 +2,7 @@
     "name": "Chicken Marsala",
     "slots": 1.5,
     "type": "entree",
+    "season": ["fall", "winter"],
     "ingredients": [
         { "name": "chicken" },
         { "name": "onion" },

@@ -2,6 +2,7 @@
     "name": "Ground Beef Tacos",
     "slots": 1,
     "type": "entree",
+    "season": null,
     "ingredients": [
         { "name": "ground beef" },
         { "name": "onion" },

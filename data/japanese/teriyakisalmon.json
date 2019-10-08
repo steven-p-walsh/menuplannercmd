@@ -2,6 +2,7 @@
     "name": "Teriyaki Salmon",
     "slots": 0.5,
     "type": "entree",
+    "season": null,
     "ingredients": [
         { "name": "salmon" },
         { "name": "teriyaki sauce" }
