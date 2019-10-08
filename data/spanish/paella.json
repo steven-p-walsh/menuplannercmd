@@ -1,0 +1,17 @@
+{
+    "name": "Paella",
+    "slots": 2,
+    "type": "entree",
+    "ingredients": [
+        { "name": "chicken stock" },
+        { "name": "fish stock" },
+        { "name": "onion" },
+        { "name": "green onion" },
+        { "name": "red bell pepper" },
+        { "name": "muscles" },
+        { "name": "chorizo" },
+        { "name": "shrimp" },
+        { "name": "clams" },
+        { "name": "tomatoes" }
+    ]
+}

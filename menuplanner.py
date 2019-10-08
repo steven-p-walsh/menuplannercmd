@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import os, json
 from recipes.recipie import Recipe
 from recipes.recipedb import RecipeDb

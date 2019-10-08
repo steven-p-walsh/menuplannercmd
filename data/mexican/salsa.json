@@ -1,0 +1,11 @@
+{
+    "name": "Salsa",
+    "slots": 0.5,
+    "type": "supplemental",
+    "ingredients": [
+        { "name": "onion" },
+        { "name": "tomatoes" },
+        { "name": "cilantro" },
+        { "name": "lime" }
+    ]
+}

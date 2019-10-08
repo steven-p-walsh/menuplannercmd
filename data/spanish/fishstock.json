@@ -1,0 +1,14 @@
+{
+    "name": "Fish Stock",
+    "slots": 1,
+    "type": "supplemental",
+    "freezable": true,
+    "ingredients": [
+        { "name": "fish bones" },
+        { "name": "dry white wine" },
+        { "name": "carrots" },
+        { "name": "onion" },
+        { "name": "celery" },
+        { "name": "thyme" }
+    ]
+}

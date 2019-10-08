@@ -1,5 +1,7 @@
 [
     { "name": "red sauce", "category": "italian", "recipe": "redsauce.json" },
-    { "name": "chicken stock", "category": "french", "recipe": "chickenstock.json"},
-    { "name": "teriyaki sauce", "category": "japanese", "recipe": "teriyakisauce.json"}
+    { "name": "chicken stock", "category": "french", "recipe": "chickenstock.json" },
+    { "name": "fish stock", "category": "spanish", "recipe": "fishstock.json" },
+    { "name": "teriyaki sauce", "category": "japanese", "recipe": "teriyakisauce.json" },
+    { "name": "salsa", "category": "mexican", "recipe": "salsa.json" }
 ]

@@ -2,3 +2,7 @@
 2. Recurse recipe-ingredients for score
 3. Reduce score for history
 4. favability score
+5. verify time slot compatibility
+6. continue populating recipe index
+7. integrate weather forcast in for grillables
+8. forced entries (ie: lasagna sunday)
