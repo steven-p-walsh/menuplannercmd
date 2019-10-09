@@ -3,13 +3,6 @@ from datetime import datetime
 
 class Recipe(object):
 
-    frequencies = {
-        'weekly': 7,
-        'semi-monthly': 14,
-        'monthly': 30,
-        'seasonally': 90,
-    }
-
     def __init__(self, category_name, name, ingredients, slots, recipe_type, favorability, frequency):
         self.category_name = category_name
         self.name = name
@@ -41,6 +34,7 @@ class Recipe(object):
             if ingredient in week_items:
                 continue
 
+            # we can't score the ingredient, if we don't have a mapping
             if ingredient not in recipe_db.mappings:
                 raise Exception('Could not find a mapping for %s as specified in %s' % (ingredient, self.name))
 
@@ -52,6 +46,13 @@ class Recipe(object):
         
         return total
 
+    frequencies = {
+        'weekly': 7,
+        'semi-monthly': 14,
+        'monthly': 30,
+        'seasonally': 90,
+    }
+
     def __calculate_historical_adjustment__(self):
         # no historical data available
         if self.last_made is None:
@@ -62,13 +63,15 @@ class Recipe(object):
         max_adjustment = 50
         min_adjustment = -30
 
-        # We are going to calculate a simple negatively
-        # sloped line.  This adjustment will be
-        # removed from the score to hinder a recipe from
-        # being picked more then the designated frequency
-        # however, it should also work the opposite direction
+        # this should calculate a simple negatively
+        # sloped line.  The adjustment will be
+        # removed from the score to reduce the chance of a recipe from
+        # being picked more then the designated frequency linearly to how
+        # much time  has passed since the last time it was picked
+        #
+        # however, it should also work the opposite direction.
         # if a recipe has gone awhile without coming up
-        # the value should be negative, and should boost the score
+        # the value will be negative, and should boost the score
 
         x1 = 1 
         y1 = max_adjustment
