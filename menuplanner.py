@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import os, json
+from datetime import datetime
 from recipes.recipie import Recipe
 from recipes.recipedb import RecipeDb
 from menugenerator import MenuGenerator
@@ -25,6 +26,18 @@ def pantry_json(data_folder):
     path = '%s/pantry.json' % data_folder
     with open(path, 'r') as f:
         return json.load(f)
+
+def import_history(data_folder):
+    path = '%s/history.json' % data_folder
+    with open(path, 'r') as f:
+        history = json.load(f)
+        for recipe in history:
+            date = recipe['history'][0]
+            recipe_db.update_history(
+                recipe['name'], 
+                recipe['category'], 
+                datetime.strptime(date, '%m-%d-%y')
+            ) 
 
 def import_ingredient_mappings(data_folder):
     path = '%s/ingredientmappings.json' % data_folder
@@ -61,6 +74,7 @@ if __name__ == "__main__":
     # this will load the recipe db
     import_category_manifest_json(data_folder)
     import_ingredient_mappings(data_folder)
+    import_history(data_folder)
 
     # combined list of all ingredients
     #names = recipe_db.get_ingredients_list()
@@ -68,9 +82,9 @@ if __name__ == "__main__":
     #names.sort()
     
     # run the generator
-    generator = MenuGenerator(recipe_db, pantry, 5, 1000)
+    generator = MenuGenerator(recipe_db, pantry, recipe_count, iteration_count)
     best_menu = generator.run()
-    names = map(lambda x: '%s - %s' % (x.category_name, x.name), best_menu['items'])
+    names = map(lambda x: '%s - %s (%s)' % (x.category_name, x.name, x.calculate_score(best_menu)), best_menu['items'])
     for name in names:
         print(name)
 

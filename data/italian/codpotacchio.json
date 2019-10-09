@@ -1,0 +1,17 @@
+{
+    "name": "Cod Potacchio",
+    "slots": 1,
+    "favorability": 75,
+    "type": "entree",    
+    "season": ["fall", "winter", "spring"],
+    "frequency": "monthly",
+    "ingredients": [
+        { "name": "cod" },
+        { "name": "onion" },
+        { "name": "anchovies" },
+        { "name": "garlic" },
+        { "name": "dry white wine" },
+        { "name": "san marzano tomatoes can" },
+        { "name": "parsley" }
+    ]
+}

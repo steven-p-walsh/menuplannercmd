@@ -27,6 +27,12 @@ class RecipeDb(object):
             all_ingredients = all_ingredients + list(map(lambda x: x['name'], ingredient_list))
         return all_ingredients
 
+    def update_history(self, recipe_name, category_name, date):
+        key = '%s.%s' % (category_name, recipe_name)
+        if key not in self.recipes:
+            raise Exception('%s does not exist in the database' % key)
+        self.recipes[key].last_made = date
+
     def entree_count(self):
         return len(self.entrees.keys())
 

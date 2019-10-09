@@ -1,0 +1,11 @@
+{
+    "name": "Linguine",
+    "slots": 1,
+    "favorability": 90,
+    "type": "supplemental",
+    "ingredients": [
+        { "name": "semolina flour" },
+        { "name": "all purpose flour" },
+        { "name": "egg" }
+    ]
+}

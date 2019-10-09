@@ -1,0 +1,19 @@
+{
+    "name": "Miso and Honey Glazed Cod",
+    "slots": 0.75,
+    "favorability": 70,
+    "type": "entree",
+    "season": null,
+    "frequency": "monthly",
+    "ingredients": [
+        { "name": "cod" },
+        { "name": "honey" },
+        { "name": "rice vinegar" },
+        { "name": "gochujang" },
+        { "name": "ginger" },
+        { "name": "sesame oil" },
+        { "name": "white miso paste" },
+        { "name": "sesame oil" },
+        { "name": "soy sauce" }
+    ]
+}

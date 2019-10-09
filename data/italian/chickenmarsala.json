@@ -4,7 +4,7 @@
     "favorability": 75,
     "type": "entree",
     "season": ["fall", "winter"],
-    "frequency": "semi-monthly",
+    "frequency": "monthly",
     "ingredients": [
         { "name": "chicken" },
         { "name": "onion" },

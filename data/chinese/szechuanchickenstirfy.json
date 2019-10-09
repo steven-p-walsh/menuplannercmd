@@ -1,0 +1,23 @@
+{
+    "name": "Szechuan Chicken Stir-Fry",
+    "slots": 1,
+    "favorability": 70,
+    "type": "entree",    
+    "season": null,
+    "frequency": "monthly",
+    "ingredients": [
+        { "name": "chicken" },
+        { "name": "mushrooms" },
+        { "name": "red bell pepper" },
+        { "name": "green bell pepper" },
+        { "name": "snow peas" },
+        { "name": "chicken stock" },
+        { "name": "onion" },
+        { "name": "ginger" },
+        { "name": "long-grained rice" },
+        { "name": "peanuts" },
+        { "name": "mirin" },
+        { "name": "sesame oil"},
+        { "name": "chili paste"}
+    ]
+}

@@ -1,6 +1,5 @@
 1. Allow mutation of ingredients
 2. Recurse recipe-ingredients for score
-3. Reduce score for history
 4. verify time slot compatibility
 5. continue populating recipe index
 6. integrate weather forcast in for grillables
