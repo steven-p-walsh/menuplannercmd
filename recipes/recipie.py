@@ -18,6 +18,7 @@ class Recipe(object):
         self.frequency = frequency
         self.recipe_type = recipe_type
         self.last_made = None
+        
         # if the item has no favorability score this will
         # Generate a random score, this
         # is necessary for un-rated recipes which might
