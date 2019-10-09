@@ -18,7 +18,7 @@ class Recipe(object):
         self.frequency = frequency
         self.recipe_type = recipe_type
         self.last_made = None
-        
+
         # if the item has no favorability score this will
         # Generate a random score, this
         # is necessary for un-rated recipes which might
@@ -86,16 +86,17 @@ class Recipe(object):
         score = 0
         pantry_items = context['pantry']
         recipe_db = context['recipe_db']
-        week_list = [ x for x in context['items'] if x is not self ]
-        week_items = list(set(list(week_list)))
+        item_ingredients = [ x.ingredients for x in context['items'] if x is not self ]
+        all_ingredients = list(itertools.chain.from_iterable(item_ingredients))
+        week_ingredient_names = list(set([ x['name'] for x in all_ingredients ]))
 
         # STEP 1
         # let's sum the cost of all ingredients minus items in our pantry
-        # or items which are duplicated from previous menu items.
+        # or items which are duplicated from previously selected menu items.
         #
         # we're removing previously added items because there's an in-built
         # assumption that we can get discounts if we buy in greater quantities
-        ingredient_score = self.__get_ingredient_score__(recipe_db, pantry_items, week_items)
+        ingredient_score = self.__get_ingredient_score__(recipe_db, pantry_items, week_ingredient_names)
         
         # STEP 2
         # Let's adjust the favorability score to the unique ingredients score
