@@ -5,6 +5,8 @@
     { "name": "teriyaki sauce", "category": "japanese", "recipe": "teriyakisauce.json" },
     { "name": "linguine", "category": "italian", "recipe": "linguine.json" },
     { "name": "salsa", "category": "mexican", "recipe": "salsa.json" },
+    { "name": "ragu", "category": "italian", "recipe": "ragu.json" },
+    { "name": "bechamel sauce", "category": "italian", "recipe": "bechamelsauce.json" },
     { "name": "Sōke", "points": 0.32 },
     { "name": "all purpose flour", "points": 0.05 },
     { "name": "anchovies", "points": 1 },
@@ -62,5 +64,7 @@
     { "name": "honey", "points":1 },
     { "name": "rice vinegar", "points":1 },
     { "name": "gochujang", "points": 3 },
-    { "name": "white miso paste", "points": 0.25 }
+    { "name": "white miso paste", "points": 0.25 },
+    { "name": "eggs", "points": 0.25 },
+    { "name": "pancetta", "points": 3 }
 ]

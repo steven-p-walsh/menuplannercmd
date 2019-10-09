@@ -1,0 +1,15 @@
+{
+    "name": "Lasagna",
+    "slots": 4,
+    "favorability": 80,
+    "type": "entree",
+    "season": ["fall", "winter"],
+    "frequency": "monthly",
+    "ingredients": [
+        { "name": "semolina flour" },
+        { "name": "all purpose flour"},
+        { "name": "eggs" },
+        { "name": "ragu" },
+        { "name": "bechamel sauce" }
+    ]
+}

@@ -10,11 +10,11 @@ class Recipe(object):
         'seasonally': 90,
     }
 
-    def __init__(self, category_name, name, ingredients, slot, recipe_type, favorability, frequency):
+    def __init__(self, category_name, name, ingredients, slots, recipe_type, favorability, frequency):
         self.category_name = category_name
         self.name = name
         self.ingredients = ingredients
-        self.slot = slot
+        self.slot_count = slots
         self.frequency = frequency
         self.recipe_type = recipe_type
         self.last_made = None

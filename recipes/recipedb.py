@@ -36,6 +36,15 @@ class RecipeDb(object):
     def entree_count(self):
         return len(self.entrees.keys())
 
-    def get_random_recipe(self):
-        key = random.choice(list(self.entrees.keys()))
-        return self.entrees[key]
+    def get_random_recipe(self, max_slot_count):
+        keys = list(self.entrees.keys())
+        selection = None
+        
+        # randomly search for recipes until a valid match is found
+        while selection is None:
+            key = random.choice(keys)
+            selection = self.entrees[key]
+            if selection.slot_count > max_slot_count:
+                selection = None
+
+        return selection

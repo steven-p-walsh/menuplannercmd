@@ -3,20 +3,27 @@ import random
 
 class MenuGenerator(object):
 
-    def __init__(self, recipe_db, pantry_items, recipe_count, iteration_count):
+    def __init__(self, recipe_db, pantry_items, schedule, recipe_count, iteration_count):
         self.pantry = pantry_items
         self.recipe_db = recipe_db
         self.recipe_count = recipe_count
         self.iteration_count = iteration_count
+        self.schedule = schedule
+
+        if self.schedule is None or len(self.schedule) != recipe_count:
+            raise Exception('Invalid schedule passed in')
 
     def ___mutate_iteration__(self, iteration):
         # try replacing one of the recipes
         new_recipe = None
+        index = random.randint(0, self.recipe_count - 1)
+        
         while new_recipe is None:
-            new_recipe = self.recipe_db.get_random_recipe()
+            new_recipe = self.recipe_db.get_random_recipe(self.schedule[index]['availability'])
             if new_recipe in iteration['items']:
                 new_recipe = None
-        iteration['items'][random.randint(0, self.recipe_count - 1)] = new_recipe
+
+        iteration['items'][index] = new_recipe
 
         # try replacing an optional or replacable ingredient in a recipe
         return iteration
@@ -40,7 +47,8 @@ class MenuGenerator(object):
     def __fetch_items__(self, item_count):
         items = []
         while len(items) < item_count:
-            random_recipe = self.recipe_db.get_random_recipe()
+            max_slot_count = self.schedule[len(items)]['availability']
+            random_recipe = self.recipe_db.get_random_recipe(max_slot_count)
             if random_recipe not in items:
                 items.append(random_recipe)
         return items

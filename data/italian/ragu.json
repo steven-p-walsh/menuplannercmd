@@ -1,0 +1,21 @@
+{
+    "name": "Ragu",
+    "slots": 3,
+    "favorability": 80,
+    "type": "supplemental",
+    "season": null,
+    "frequency": "monthly",
+    "ingredients": [
+        { "name": "italian sausage" },
+        { "name": "pancetta"},
+        { "name": "san marzano tomatoes can" },
+        { "name": "carrots" },
+        { "name": "celery" },
+        { "name": "garlic" },
+        { "name": "ground beef" },
+        { "name": "dry white wine" },
+        { "name": "chicken stock" },
+        { "name": "basil" },
+        { "name": "onion" }
+    ]
+}

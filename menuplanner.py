@@ -39,6 +39,12 @@ def import_history(data_folder):
                 datetime.strptime(date, '%m-%d-%y')
             ) 
 
+def import_schedule(data_folder):
+    path = '%s/schedule.json' % data_folder
+    with open(path, 'r') as f:
+        schedule = json.load(f)
+        return schedule
+
 def import_ingredient_mappings(data_folder):
     path = '%s/ingredientmappings.json' % data_folder
     with open(path, 'r') as f:
@@ -68,9 +74,10 @@ def import_category_manifest_json(data_folder):
 if __name__ == "__main__":
     data_folder = './data'
     recipe_count = 5
-    iteration_count = 1000
+    iteration_count = 10000
     pantry = pantry_json(data_folder)
-    
+    schedule = import_schedule(data_folder)
+
     # this will load the recipe db
     import_category_manifest_json(data_folder)
     import_ingredient_mappings(data_folder)
@@ -82,9 +89,15 @@ if __name__ == "__main__":
     #names.sort()
     
     # run the generator
-    generator = MenuGenerator(recipe_db, pantry, recipe_count, iteration_count)
+    generator = MenuGenerator(recipe_db, pantry, schedule, recipe_count, iteration_count)
     best_menu = generator.run()
-    names = map(lambda x: '%s - %s (%s)' % (x.category_name, x.name, x.calculate_score(best_menu)), best_menu['items'])
+    names = [  '%s: %s - %s (%s)' % (
+        schedule[i]['day'],
+        x.category_name, 
+        x.name, 
+        x.calculate_score(best_menu)) 
+        for i,x in enumerate(best_menu['items'])
+    ]
     for name in names:
         print(name)
 
