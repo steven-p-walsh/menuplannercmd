@@ -10,7 +10,7 @@ class MenuGenerator(object):
         self.iteration_count = iteration_count
         self.schedule = schedule
 
-        if self.schedule is None or len(self.schedule) != recipe_count:
+        if self.schedule is None or len(self.schedule) < recipe_count:
             raise Exception('Invalid schedule passed in')
 
     def ___mutate_iteration__(self, iteration):
