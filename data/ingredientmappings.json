@@ -40,7 +40,7 @@
     { "name": "pearl onion", "points": 1 },
     { "name": "plain yogurt", "points": 1 },
     { "name": "purple onion", "points": 0.50 },
-    { "name": "salmon", "points": 9 },
+    { "name": "salmon", "points": 9, "grouppenalty": 10 },
     { "name": "san marzano tomatoes can", "points": 2.5 },
     { "name": "semolina flour", "points": 0.50 },
     { "name": "shrimp", "points": 6 },

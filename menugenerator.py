@@ -20,6 +20,13 @@ class MenuGenerator(object):
         
         while new_recipe is None:
             new_recipe = self.recipe_db.get_random_recipe(self.schedule[index]['availability'])
+
+            # could not find a valid random recipe, just keep what we have
+            if new_recipe is None:
+                new_recipe = iteration['items'][index]
+                break
+
+            # verify we're not duplicating anything
             if new_recipe in iteration['items']:
                 new_recipe = None
 

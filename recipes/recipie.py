@@ -25,21 +25,25 @@ class Recipe(object):
         total = 0
         ingredient_names = [ x['name'] for x in self.ingredients ]
         for ingredient in ingredient_names:
-            
+            # we can't score the ingredient, if we don't have a mapping
+            if ingredient not in recipe_db.mappings:
+                raise Exception('Could not find a mapping for %s as specified in %s' % (ingredient, self.name))
+
+            mapping = recipe_db.mappings[ingredient]
+                        
             # skip if already in pantry
             if ingredient in pantry_items:
                 continue
 
             # skip if another recipe has included
             if ingredient in week_items:
+                # there is a penalty for having this appear more than once a menu
+                if 'grouppenalty' in mapping:
+                    total = total + mapping['grouppenalty']
+
+                # skip the rest
                 continue
 
-            # we can't score the ingredient, if we don't have a mapping
-            if ingredient not in recipe_db.mappings:
-                raise Exception('Could not find a mapping for %s as specified in %s' % (ingredient, self.name))
-
-            mapping = recipe_db.mappings[ingredient]
-            
             # this is not a mapped ingredient
             if 'points' in mapping:
                 total = total + mapping['points']

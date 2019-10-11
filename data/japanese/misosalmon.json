@@ -1,0 +1,16 @@
+{
+    "name": "Miso Salmon",
+    "slots": 1,
+    "favorability": 80,
+    "type": "entree",
+    "season": null,
+    "frequency": "monthly",
+    "ingredients": [
+        { "name": "salmon" },
+        { "name": "white miso paste" },
+        { "name": "mirin" },
+        { "name": "soy sauce" },
+        { "name": "sesame oil" },
+        { "name": "green onion" }
+    ]
+}

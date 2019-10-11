@@ -39,11 +39,13 @@ class RecipeDb(object):
     def get_random_recipe(self, max_slot_count):
         keys = list(self.entrees.keys())
         selection = None
-        
+
         # randomly search for recipes until a valid match is found
         while selection is None:
             key = random.choice(keys)
             selection = self.entrees[key]
+
+            # this item does not fit the time requirements
             if selection.slot_count > max_slot_count:
                 selection = None
 
