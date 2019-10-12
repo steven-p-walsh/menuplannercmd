@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
-import os, json, argparse
+import argparse
 from recipes.recipedb import RecipeDb
-from menugenerator import MenuGenerator
+from menu.menugenerator import MenuGenerator
+from menu.shoppingplanner import ShoppingPlanner
+from menu.utils import color
 from Jsonimporter import JsonImporter
 
 
@@ -12,8 +14,11 @@ p.add_argument('-i', help='Number of iterations to test', type=int, default=1000
 p.add_argument('-c', help='The number of recipes to generate', type=int, default=5)
 p.add_argument('-d', help='The location of the data folder', default='./data')
 p.add_argument('-bi', help="List of ingredients to boost", default=None)
+p.add_argument('-sl', help="Print the shopping list as well", action="store_true")
 args = p.parse_args()
 
+names_only = args.n
+print_shopping_list = args.sl
 data_folder = args.d
 recipe_count = args.c
 iteration_count = args.i
@@ -33,7 +38,7 @@ if __name__ == "__main__":
     best_menu = generator.run()
     names = []
 
-    if args.n:
+    if names_only:
         names = [ x.name for x in best_menu['items'] ] 
     else:
         names = [  '%s: %s - %s (%s)' % (
@@ -44,6 +49,14 @@ if __name__ == "__main__":
             for i,x in enumerate(best_menu['items'])
         ]
 
+
+    print(color.BOLD + 'Recipes' + color.END)
     for name in names:
-        print(name)
+        print(color.GREEN + name + color.END)
+    
+
+    if print_shopping_list:
+        planner = ShoppingPlanner(best_menu, recipe_db.mappings, pantry)
+        planner.print_list()
+
 

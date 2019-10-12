@@ -3,5 +3,5 @@
     {"day": "tuesday", "availability": 1.5},
     {"day": "wednesday", "availability": 1},
     {"day": "thursday", "availability": 1.5},
-    {"day": "friday", "availability": 0.75}
+    {"day": "friday", "availability": 1}
 ]

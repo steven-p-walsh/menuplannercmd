@@ -1,5 +1,6 @@
 import json, random, itertools
 from datetime import datetime
+from menu.utils import get_menu_ingredients
 
 class Recipe(object):
 
@@ -100,9 +101,8 @@ class Recipe(object):
         pantry_items = context['pantry']
         recipe_db = context['recipe_db']
         boosted_ingredients = context['boosted_ingredients']
-        item_ingredients = [ x.ingredients for x in context['items'] if x is not self ]
-        all_ingredients = list(itertools.chain.from_iterable(item_ingredients))
-        week_ingredient_names = list(set([ x['name'] for x in all_ingredients ]))
+        other_items = [ item for item in context['items'] if item is not self ]
+        all_ingredients = get_menu_ingredients(other_items)
 
         # STEP 1
         # let's sum the cost of all ingredients minus items in our pantry
@@ -113,7 +113,7 @@ class Recipe(object):
         ingredient_score = self.__get_ingredient_score__(
             recipe_db, 
             pantry_items, 
-            week_ingredient_names, 
+            all_ingredients, 
             boosted_ingredients
         )
         

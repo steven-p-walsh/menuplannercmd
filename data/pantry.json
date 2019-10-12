@@ -1,11 +1,22 @@
 [
-    { "name": "onion"  },
     { "name": "Sōke" },
     { "name": "all purpose flour" },
     { "name": "anchovies" },
     { "name": "black beans can" },
     { "name": "carrots" },
     { "name": "chicken" },
-    { "name": "garlic" },
-    { "name": "shrimp" }
+    { "name": "chicken bones" },
+    { "name": "shrimp" },
+    { "name": "soy sauce" },
+    { "name": "chili paste" },
+    { "name": "semolina flour" },
+    { "name": "long-grained rice" },
+    { "name": "peanuts" },
+    { "name": "sesame oil" },
+    { "name": "rice vinegar" },
+    { "name": "honey" },
+    { "name": "white miso paste" },
+    { "name": "mirin" },
+    { "name": "ground beef" },
+    { "name": "eggs" }
 ]
