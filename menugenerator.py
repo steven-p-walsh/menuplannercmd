@@ -3,8 +3,9 @@ import random
 
 class MenuGenerator(object):
 
-    def __init__(self, recipe_db, pantry_items, schedule, recipe_count, iteration_count):
+    def __init__(self, recipe_db, pantry_items, schedule, recipe_count, iteration_count, boosted):
         self.pantry = pantry_items
+        self.boosted_ingredients = boosted
         self.recipe_db = recipe_db
         self.recipe_count = recipe_count
         self.iteration_count = iteration_count
@@ -40,6 +41,7 @@ class MenuGenerator(object):
             'recipe_db': self.recipe_db, 
             'items': first_items if best_iteration is None else best_iteration['items'].copy(), 
             'pantry': list(map(lambda x: x['name'], self.pantry)), 
+            'boosted_ingredients': self.boosted_ingredients,
             'score': -1 
         }
         return context

@@ -11,11 +11,13 @@ p.add_argument('-n', help='print the recipe names only', action='store_true')
 p.add_argument('-i', help='Number of iterations to test', type=int, default=1000)
 p.add_argument('-c', help='The number of recipes to generate', type=int, default=5)
 p.add_argument('-d', help='The location of the data folder', default='./data')
+p.add_argument('-bi', help="List of ingredients to boost", default=None)
 args = p.parse_args()
 
 data_folder = args.d
 recipe_count = args.c
 iteration_count = args.i
+boosted_list = [] if args.bi is None else args.bi.split(',')
 
 if __name__ == "__main__":
 
@@ -27,7 +29,7 @@ if __name__ == "__main__":
     schedule = importer.get_schedule()
  
     # run the generator
-    generator = MenuGenerator(recipe_db, pantry, schedule, recipe_count, iteration_count)
+    generator = MenuGenerator(recipe_db, pantry, schedule, recipe_count, iteration_count, boosted_list)
     best_menu = generator.run()
     names = []
 

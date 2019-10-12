@@ -3,6 +3,13 @@ from datetime import datetime
 
 class Recipe(object):
 
+    frequencies = {
+        'weekly': 7,
+        'semi-monthly': 14,
+        'monthly': 30,
+        'seasonally': 90,
+    }
+
     def __init__(self, category_name, name, ingredients, slots, recipe_type, favorability, frequency):
         self.category_name = category_name
         self.name = name
@@ -21,7 +28,7 @@ class Recipe(object):
         # recipes will be bumped up, i'm starting at 50
         self.favorability_score = favorability if favorability is not None else random.randint(50,100)
 
-    def __get_ingredient_score__(self, recipe_db, pantry_items, week_items):
+    def __get_ingredient_score__(self, recipe_db, pantry_items, week_items, boosted_ingredients):
         total = 0
         ingredient_names = [ x['name'] for x in self.ingredients ]
         for ingredient in ingredient_names:
@@ -29,8 +36,14 @@ class Recipe(object):
             if ingredient not in recipe_db.mappings:
                 raise Exception('Could not find a mapping for %s as specified in %s' % (ingredient, self.name))
 
-            mapping = recipe_db.mappings[ingredient]
-                        
+            mapping = recipe_db.mappings[ingredient] 
+
+            # this ingredient is in the boosted list, so we're going to give a discount
+            # to this ingredient.  it does not necessairly need to be in the pantry
+            # so we need to evaluate it before we evaluate the pantry
+            if ingredient in boosted_ingredients:
+                total = total - 10
+
             # skip if already in pantry
             if ingredient in pantry_items:
                 continue
@@ -40,22 +53,15 @@ class Recipe(object):
                 # there is a penalty for having this appear more than once a menu
                 if 'grouppenalty' in mapping:
                     total = total + mapping['grouppenalty']
-
-                # skip the rest
-                continue
+                else:
+                    # skip the rest
+                    continue
 
             # this is not a mapped ingredient
             if 'points' in mapping:
                 total = total + mapping['points']
         
         return total
-
-    frequencies = {
-        'weekly': 7,
-        'semi-monthly': 14,
-        'monthly': 30,
-        'seasonally': 90,
-    }
 
     def __calculate_historical_adjustment__(self):
         # no historical data available
@@ -93,6 +99,7 @@ class Recipe(object):
         score = 0
         pantry_items = context['pantry']
         recipe_db = context['recipe_db']
+        boosted_ingredients = context['boosted_ingredients']
         item_ingredients = [ x.ingredients for x in context['items'] if x is not self ]
         all_ingredients = list(itertools.chain.from_iterable(item_ingredients))
         week_ingredient_names = list(set([ x['name'] for x in all_ingredients ]))
@@ -103,7 +110,12 @@ class Recipe(object):
         #
         # we're removing previously added items because there's an in-built
         # assumption that we can get discounts if we buy in greater quantities
-        ingredient_score = self.__get_ingredient_score__(recipe_db, pantry_items, week_ingredient_names)
+        ingredient_score = self.__get_ingredient_score__(
+            recipe_db, 
+            pantry_items, 
+            week_ingredient_names, 
+            boosted_ingredients
+        )
         
         # STEP 2
         # Let's adjust the favorability score to the unique ingredients score
