@@ -50,12 +50,14 @@ if __name__ == "__main__":
         ]
 
 
-    print(color.BOLD + 'Recipes' + color.END)
+    if print_shopping_list:
+        print(color.BOLD + 'Recipes' + color.END)
+    
     for name in names:
         print(color.GREEN + name + color.END)
     
-
     if print_shopping_list:
+        print('\r\n')
         planner = ShoppingPlanner(best_menu, recipe_db.mappings, pantry)
         planner.print_list()
 

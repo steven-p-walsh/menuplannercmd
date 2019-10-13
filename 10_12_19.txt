@@ -1,0 +1,15 @@
+[1mRecipes[0m
+[92mGround Beef Tacos[0m
+[92mWiggly Bois[0m
+[92mMiso and Honey Glazed Cod[0m
+[92mOne Pot Creamy Chicken Mushroom Florentine[0m
+[92mSzechuan Chicken Stir-Fry[0m
+[1mproduce             protein             pantry              [0m
+[96mspinach             italian sausage     sun dried tomatoes  [0m
+[96mginger              cod                 gochujang           [0m
+[96msnow peas                                                   [0m
+[96mgreen bell pepper                                           [0m
+[96mgarlic                                                      [0m
+[96monion                                                       [0m
+[96mred bell pepper                                             [0m
+[96mmushrooms                                                   [0m
