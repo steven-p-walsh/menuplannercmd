@@ -1,0 +1,23 @@
+{
+    "name": "Rintaros Beef Curry",
+    "slots": 1.5,
+    "favorability": null,
+    "type": "entree",
+    "season": ["winter","fall"],
+    "frequency": "monthly",
+    "ingredients": [
+        { "name": "stewing beef" },
+        { "name": "onion" },
+        { "name": "cornstarch" },
+        { "name": "apples" },
+        { "name": "mirin" },
+        { "name": "curry powder" },
+        { "name": "garam masala" },
+        { "name": "soy sauce" },
+        { "name": "chicken stock" },
+        { "name": "squash" },
+        { "name": "potatoes" },
+        { "name": "carrots" }
+    ],
+    "url": "https://www.bonappetit.com/recipe/rintaros-beef-curry"
+}

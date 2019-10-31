@@ -1,0 +1,27 @@
+{
+    "name": "Chicken Khao Soi",
+    "slots": 1,
+    "favorability": null,
+    "type": "entree",
+    "season": null,
+    "frequency": "monthly",
+    "ingredients": [
+        { "name": "chicken" },
+        { "name": "shallots" },
+        { "name": "dried guajillo chiles" },
+        { "name": "ginger" },
+        { "name": "cilantro" },
+        { "name": "coriander seeds" },
+        { "name": "turmeric" },
+        { "name": "curry powder" },
+        { "name": "coconut milk" },
+        { "name": "chicken stock" },
+        { "name": "egg noodles" },
+        { "name": "fish sauce" },
+        { "name": "brown sugar" },
+        { "name": "purple onion" },
+        { "name": "bean sprout" },
+        { "name": "lime" }
+    ],
+    "url": "https://www.bonappetit.com/recipe/chicken-khao-soi"
+}
