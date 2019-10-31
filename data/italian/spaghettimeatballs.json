@@ -1,0 +1,13 @@
+{
+    "name": "Spaghetti & Meatballs",
+    "slots": 0.25,
+    "favorability": 78,
+    "type": "entree",
+    "season": null,
+    "frequency": "semi monthly",
+    "ingredients": [
+        { "name": "spaghetti" },
+        { "name": "meatballs" },
+        { "name": "spaghetti sauce" }
+    ]
+}
