@@ -1,6 +1,8 @@
 [
     { "name":"Chicken Marsala", "category": "italian", "history": [ "10-05-19" ] },
     { "name":"Ground Beef Tacos", "category": "mexican", "history": [ "10-05-19" ] },
-    { "name":"Chicken Enchiladas", "category": "american", "history": [ "10-05-19" ] },
-    { "name":"Miso Salmon", "category": "japanese", "history": [ "10-05-19" ] }
+    { "name":"Chicken Enchiladas", "category": "american", "history": [ "10-20-19" ] },
+    { "name":"Wiggly Bois", "category": "italian", "history": [ "10-12-19" ] },
+    { "name":"One Pot Creamy Chicken Mushroom Florentine", "category": "italian", "history": [ "10-12-19" ] },
+    { "name":"Szechuan Chicken Stir-Fry", "category": "chinese", "history": [ "10-20-19" ] }
 ]
