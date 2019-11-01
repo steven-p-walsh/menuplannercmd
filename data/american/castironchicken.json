@@ -1,0 +1,14 @@
+{
+    "name": "Cast Iron Chicken",
+    "slots": 1.5,
+    "favorability": null,
+    "type": "entree",
+    "season": ["winter","fall"],
+    "frequency": "monthly",
+    "ingredients": [
+        { "name": "whole chicken" },
+        { "name": "potatoes" },
+        { "name": "thyme" }
+    ],
+    "url": "https://www.bonappetit.com/recipe/cast-iron-roast-chicken-with-crispy-potatoes"
+}

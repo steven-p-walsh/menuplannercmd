@@ -1,0 +1,19 @@
+{
+    "name": "Coconut Beef Curry",
+    "slots": 1.5,
+    "favorability": null,
+    "type": "entree",
+    "season": ["winter","fall"],
+    "frequency": "monthly",
+    "ingredients": [
+        { "name": "stewing beef" },
+        { "name": "onion" },
+        { "name": "curry powder" },
+        { "name": "coconut milk" },
+        { "name": "potatoes" },
+        { "name": "cilantro" },
+        { "name": "lime" },
+        { "name": "fresno chili" }
+    ],
+    "url": "https://www.bonappetit.com/recipe/coconut-beef-curry"
+}
