@@ -82,3 +82,8 @@ class MenuGenerator(object):
         
         # we've got our best menu
         return best_iteration
+    
+    def explain_menu_score(self, menu):
+        context = self.__setup_iteration__(menu)
+        for item in menu['items']:
+            item.explain_score(context)    

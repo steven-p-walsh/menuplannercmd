@@ -15,6 +15,7 @@ p.add_argument('-c', help='The number of recipes to generate', type=int, default
 p.add_argument('-d', help='The location of the data folder', default='./data')
 p.add_argument('-bi', help="List of ingredients to boost", default=None)
 p.add_argument('-sl', help="Print the shopping list as well", action="store_true")
+p.add_argument('-e', help="Explain the score", action="store_true")
 args = p.parse_args()
 
 names_only = args.n
@@ -23,6 +24,7 @@ data_folder = args.d
 recipe_count = args.c
 iteration_count = args.i
 boosted_list = [] if args.bi is None else args.bi.split(',')
+explain_score = args.e
 
 if __name__ == "__main__":
 
@@ -61,5 +63,9 @@ if __name__ == "__main__":
         planner = ShoppingPlanner(best_menu, recipe_db.mappings, pantry)
         planner.print_list()
         print('\r\n')
+    
+    if explain_score:
+        generator.explain_menu_score(best_menu)
+
 
 

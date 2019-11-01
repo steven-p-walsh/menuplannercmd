@@ -29,7 +29,13 @@ class Recipe(object):
         # recipes will be bumped up, i'm starting at 50
         self.favorability_score = favorability if favorability is not None else random.randint(50,100)
 
-    def __get_ingredient_score__(self, recipe_db, pantry_items, week_items, boosted_ingredients):
+    def __get_ingredient_score__(self, context):
+        pantry_items = context['pantry']
+        recipe_db = context['recipe_db']
+        boosted_ingredients = context['boosted_ingredients']
+        other_items = [ item for item in context['items'] if item is not self ]
+        week_items = get_menu_ingredients(other_items)
+
         total = 0
         ingredient_names = [ x['name'] for x in self.ingredients ]
         for ingredient in ingredient_names:
@@ -71,8 +77,8 @@ class Recipe(object):
 
         days = (datetime.now() - self.last_made).days
         frequency_value = Recipe.frequencies[self.frequency]
-        max_adjustment = 50
-        min_adjustment = -30
+        max_adjustment = 20
+        min_adjustment = -10
 
         # this should calculate a simple negatively
         # sloped line.  The adjustment will be
@@ -98,11 +104,6 @@ class Recipe(object):
 
     def calculate_score(self, context):
         score = 0
-        pantry_items = context['pantry']
-        recipe_db = context['recipe_db']
-        boosted_ingredients = context['boosted_ingredients']
-        other_items = [ item for item in context['items'] if item is not self ]
-        all_ingredients = get_menu_ingredients(other_items)
 
         # STEP 1
         # let's sum the cost of all ingredients minus items in our pantry
@@ -110,12 +111,7 @@ class Recipe(object):
         #
         # we're removing previously added items because there's an in-built
         # assumption that we can get discounts if we buy in greater quantities
-        ingredient_score = self.__get_ingredient_score__(
-            recipe_db, 
-            pantry_items, 
-            all_ingredients, 
-            boosted_ingredients
-        )
+        ingredient_score = self.__get_ingredient_score__(context)
         
         # STEP 2
         # Let's adjust the favorability score to the unique ingredients score
@@ -132,4 +128,18 @@ class Recipe(object):
         # we're done
         return score
 
-            
+    
+    def explain_score(self, context):
+        explaination = """
+            Recipe: {recipe_name}
+            Favorability Score: {favorability_score}
+            Ingredient Score: {ingredient_score}
+            Historical Adjustment Score: {historical_adjustment}
+        """.format(
+            recipe_name =self.name,
+            favorability_score = self.favorability_score,
+            ingredient_score = self.__get_ingredient_score__(context),
+            historical_adjustment = self.__calculate_historical_adjustment__()
+        )
+
+        print(explaination)
