@@ -1,7 +1,7 @@
 {
     "name": "Chicken Enchiladas",
     "slots": 1,
-    "favorability": 80,
+    "favorability": 75,
     "frequency": "semi-monthly", 
     "season": null,
     "type": "entree",

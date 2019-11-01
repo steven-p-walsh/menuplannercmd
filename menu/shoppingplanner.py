@@ -42,7 +42,7 @@ class ShoppingPlanner(object):
         # build the format string
         format_str = ''
         for col in columns:
-            format_str = format_str + '{:<20s}'
+            format_str = format_str + '{:<25s}'
         
         # print headers
         print(color.BOLD + format_str.format(*headers) + color.END)
