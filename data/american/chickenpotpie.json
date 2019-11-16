@@ -1,0 +1,20 @@
+{
+    "name": "Chicken Pot Pie",
+    "slots": 1,
+    "favorability": 70,
+    "type": "entree",    
+    "season": null,
+    "frequency": "monthly",
+    "ingredients": [
+        { "name": "chicken" },
+        { "name": "thyme" },
+        { "name": "chicken stock" },
+        { "name": "frozen peas" },
+        { "name": "frozen pearl onions" },
+        { "name": "chicken stock" },
+        { "name": "parsley" },
+        { "name": "frozen puff pastry" },
+        { "name": "eggs" }
+    ],
+    "url": "https://www.bonappetit.com/recipe/fast-chicken-pot-pie"
+}

@@ -1,7 +1,7 @@
 {
     "name": "Coconut Beef Curry",
     "slots": 1.5,
-    "favorability": null,
+    "favorability": 50,
     "type": "entree",
     "season": ["winter","fall"],
     "frequency": "monthly",

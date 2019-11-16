@@ -7,9 +7,9 @@
     { "name": "salsa", "category": "mexican", "recipe": "salsa.json" },
     { "name": "ragu", "category": "italian", "recipe": "ragu.json" },
     { "name": "bechamel sauce", "category": "italian", "recipe": "bechamelsauce.json" },
-    { "name": "Sōke", "points": 0.32, "grocery_group": "alcohol" },
-    { "name": "all purpose flour", "points": 0.05, "grocery_group": "pantry" },
-    { "name": "anchovies", "points": 1, "grocery_group": "pantry" },
+    { "name": "Sōke", "points": 0.32, "grocery_section": "alcohol" },
+    { "name": "all purpose flour", "points": 0.05, "grocery_section": "pantry" },
+    { "name": "anchovies", "points": 1, "grocery_section": "pantry" },
     { "name": "bacon",  "points": 5, "grocery_section": "protein" },
     { "name": "basil", "points": 2, "grocery_section": "produce" },
     { "name": "black beans can", "points": 1, "grocery_section": "pantry" },
@@ -88,5 +88,7 @@
     { "name": "gochujang", "points": 3, "grocery_section": "pantry" },
     { "name": "white miso paste", "points": 0.25, "grocery_section": "pantry" },
     { "name": "eggs", "points": 0.25, "grocery_section": "dairy" },
-    { "name": "pancetta", "points": 3, "grocery_section": "protein" }
+    { "name": "frozen puff pastry", "points": 2.5, "grocery_section": "frozen" },
+    { "name": "frozen peas", "points": 2, "grocery_section": "frozen" },
+    { "name": "frozen pearl onions", "points": 2, "grocery_section": "frozen" }
 ]

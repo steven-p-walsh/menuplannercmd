@@ -1,9 +1,7 @@
 [
     { "name": "Sōke" },
     { "name": "all purpose flour" },
-    { "name": "anchovies" },
     { "name": "black beans can" },
-    { "name": "carrots" },
     { "name": "chicken" },
     { "name": "chicken bones" },
     { "name": "shrimp" },
@@ -18,5 +16,16 @@
     { "name": "white miso paste" },
     { "name": "mirin" },
     { "name": "ground beef" },
-    { "name": "eggs" }
+    { "name": "eggs" },
+    { "name": "coriander seeds" },
+    { "name": "turmeric" },
+    { "name": "coconut milk" },
+    { "name": "onion" },
+    { "name": "spaghetti" },
+    { "name": "spaghetti sauce" },
+    { "name": "meatballs" },
+    { "name": "taco cheese" },
+    { "name": "garlic" },
+    { "name": "dry white wine" },
+    { "name": "anchovies" }
 ]

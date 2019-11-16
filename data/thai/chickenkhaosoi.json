@@ -1,7 +1,7 @@
 {
     "name": "Chicken Khao Soi",
     "slots": 1,
-    "favorability": null,
+    "favorability": 50,
     "type": "entree",
     "season": null,
     "frequency": "monthly",

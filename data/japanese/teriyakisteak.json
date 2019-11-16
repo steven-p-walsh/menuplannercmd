@@ -1,7 +1,7 @@
 {
     "name": "Teriyaki Steak",
     "slots": 0.5,
-    "favorability": 75,
+    "favorability": 60,
     "type": "entree",
     "season": null,
     "frequency": "monthly",
