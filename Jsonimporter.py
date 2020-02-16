@@ -50,7 +50,8 @@ class JsonImporter(object):
                     recipe_json['slots'],
                     recipe_json['type'],
                     recipe_json['favorability'] if 'favorability' in recipe_json else None,
-                    recipe_json['frequency'] if 'frequency' in recipe_json else None
+                    recipe_json['frequency'] if 'frequency' in recipe_json else None,
+                    recipe_json['season'] if 'season' in recipe_json else None
                 )
                 self.recipe_db.add_recipe(recipe)
 
@@ -71,7 +72,9 @@ class JsonImporter(object):
         with open(file, 'r') as f:
             category_json = json.load(f)
             for category in category_json:
-                self.__import_category_recipe_json__(category['name'])
+                category_name = category['name']
+                self.recipe_db.categories.append(category_name)
+                self.__import_category_recipe_json__(category_name)
 
     def populate_recipe_db(self):
         self.import_category_manifest()

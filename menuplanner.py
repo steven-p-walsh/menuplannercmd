@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import argparse
+import argparse, json
 from recipes.recipedb import RecipeDb
 from menu.menugenerator import MenuGenerator
 from menu.shoppingplanner import ShoppingPlanner
@@ -16,6 +16,7 @@ p.add_argument('-d', help='The location of the data folder', default='./data')
 p.add_argument('-bi', help="List of ingredients to boost", default=None)
 p.add_argument('-sl', help="Print the shopping list as well", action="store_true")
 p.add_argument('-e', help="Explain the score", action="store_true")
+p.add_argument('-j', help="Print output in JSON format", action="store_true")
 args = p.parse_args()
 
 names_only = args.n
@@ -25,19 +26,9 @@ recipe_count = args.c
 iteration_count = args.i
 boosted_list = [] if args.bi is None else args.bi.split(',')
 explain_score = args.e
+json_out = args.j
 
-if __name__ == "__main__":
-
-    recipe_db = RecipeDb()
-    
-    importer = JsonImporter(data_folder, recipe_db)
-    importer.populate_recipe_db()
-    pantry = importer.get_pantry()
-    schedule = importer.get_schedule()
- 
-    # run the generator
-    generator = MenuGenerator(recipe_db, pantry, schedule, recipe_count, iteration_count, boosted_list)
-    best_menu = generator.run()
+def print_text(generator, best_menu):
     names = []
 
     if names_only:
@@ -65,7 +56,35 @@ if __name__ == "__main__":
         print('\r\n')
     
     if explain_score:
-        generator.explain_menu_score(best_menu)
+        generator.print_explain_menu_score(best_menu)
 
+def print_json(generator, best_menu):
+    plan = {}
 
+    plan['items'] = generator.menu_details(best_menu)
+
+    if print_shopping_list:
+        planner = ShoppingPlanner(best_menu, recipe_db.mappings, pantry)
+        plan['shopping_list'] = planner.ingredient_groups()
+    
+    jsonstr = json.dumps(plan)
+    print(jsonstr)
+
+if __name__ == "__main__":
+
+    recipe_db = RecipeDb()
+    
+    importer = JsonImporter(data_folder, recipe_db)
+    importer.populate_recipe_db()
+    pantry = importer.get_pantry()
+    schedule = importer.get_schedule()
+ 
+    # run the generator
+    generator = MenuGenerator(recipe_db, pantry, schedule, recipe_count, iteration_count, boosted_list)
+    best_menu = generator.run()
+
+    if json_out:
+        print_json(generator, best_menu)
+    else:
+        print_text(generator, best_menu)
 

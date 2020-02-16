@@ -11,7 +11,7 @@ class Recipe(object):
         'seasonally': 90,
     }
 
-    def __init__(self, category_name, name, ingredients, slots, recipe_type, favorability, frequency):
+    def __init__(self, category_name, name, ingredients, slots, recipe_type, favorability, frequency, seasons):
         self.category_name = category_name
         self.name = name
         self.ingredients = ingredients
@@ -19,7 +19,8 @@ class Recipe(object):
         self.frequency = frequency
         self.recipe_type = recipe_type
         self.last_made = None
-
+        self.seasons = seasons
+        self.raw_score = favorability
         # if the item has no favorability score this will
         # Generate a random score, this
         # is necessary for un-rated recipes which might
@@ -129,7 +130,15 @@ class Recipe(object):
         return score
 
     
-    def explain_score(self, context):
+    def recipe_score(self, context):
+        return {
+            'name': self.name,
+            'favorability': self.favorability_score,
+            'ingredient_score': self.__get_ingredient_score__(context),
+            'historical_adjustment': self.__calculate_historical_adjustment__()
+        };
+
+    def print_explain_score(self, context):
         explaination = """
             Recipe: {recipe_name}
             Favorability Score: {favorability_score}

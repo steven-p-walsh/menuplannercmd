@@ -1,5 +1,5 @@
 import random, json
-
+from recipes.recipegraph import RecipeGraph
 
 class RecipeDb(object):
 
@@ -7,9 +7,10 @@ class RecipeDb(object):
         self.recipes = {}
         self.entrees = {} # we do not want to suggest sauces and stocks
         self.mappings = {}
+        self.categories = []
 
     def add_recipe(self, recipe):
-        key = '%s.%s' % (recipe.category_name, recipe.name)
+        key = '%s.%s' % (recipe.category_name.lower(), recipe.name.lower())
         if key not in self.recipes:
             self.recipes[key] = recipe
             if recipe.recipe_type == 'entree':
@@ -18,7 +19,7 @@ class RecipeDb(object):
             raise Exception('Error adding recipe, duplicate recipe %s' % key)
 
     def add_mapping(self, mapping):
-        key = mapping['name']
+        key = mapping['name'].lower()
         self.mappings[key] = mapping
 
     def get_ingredients_list(self):
@@ -28,7 +29,7 @@ class RecipeDb(object):
         return all_ingredients
 
     def update_history(self, recipe_name, category_name, date):
-        key = '%s.%s' % (category_name, recipe_name)
+        key = '%s.%s' % (category_name.lower(), recipe_name.lower())
         if key not in self.recipes:
             raise Exception('%s does not exist in the database' % key)
         self.recipes[key].last_made = date
@@ -50,3 +51,6 @@ class RecipeDb(object):
                 selection = None
 
         return selection
+    
+    def build_recipe_graph(self):
+        return RecipeGraph(self)

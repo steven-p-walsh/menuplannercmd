@@ -50,7 +50,6 @@ class ShoppingPlanner(object):
         # print body
         for row in rows:
             print(color.CYAN + format_str.format(*row) + color.END)
-            
 
     def print_list(self):
         mappings = self.ingredient_groups()
